@@ -12,7 +12,7 @@ public class MapUsingReduce {
 
 	public static <I, O> List<O> map(Stream<I> stream, Function<I, O> mapper) {
 
-		return stream.reduce(new ArrayList<O>(), (acc, x) -> {
+		return stream.reduce(new ArrayList<>(), (acc, x) -> {
 			ArrayList<O> mut = new ArrayList<>(acc);
 			mut.add(mapper.apply(x));
 			return mut;
